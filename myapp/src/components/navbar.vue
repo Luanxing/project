@@ -11,10 +11,9 @@
    </nav>
 </template>
 <script>
-import axios from 'axios'
 export default {
   mounted () {
-  
+
   }
 }
 </script>
@@ -45,14 +44,14 @@ export default {
           ul{
           display:flex;
           li:first-of-type{
-            padding:0 1.2rem; 
+            padding:0 1.2rem;
           }
           li{
             text-align: center;
             flex:1;
             position: relative;
             .new{
-              font-style: normal;
+                  font-style: normal;
                   background: -webkit-linear-gradient(top,#ef4545,#d80808);
                   width: 2.5rem;
                   height: 1.2rem;
@@ -81,11 +80,11 @@ export default {
             }
             .ico_my{
               width: 1.4rem;
-    height: 1.8rem;
-    display: inline-block;
-    vertical-align: middle;
-    background: url(../assets/ico_my.png) no-repeat;
-    background-size: cover;
+              height: 1.8rem;
+              display: inline-block;
+              vertical-align: middle;
+              background: url(../assets/ico_my.png) no-repeat;
+              background-size: cover;
             }
             }
           }
