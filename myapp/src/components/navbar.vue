@@ -2,10 +2,10 @@
    <nav>
      <ul>
        <li><a href="#"><i class="logo"></i></a></li>
-       <router-link to="/main" tag="li" activeClass="active"><span>首页</span></router-link>
-       <router-link to="/tickets" tag="li" activeClass="active"><span>购票</span></router-link>
-       <router-link to="/shopping" tag="li" activeClass="active"><span>商城</span><em class="new">NEW</em></router-link>
-        <router-link to="/find" tag="li" activeClass="active"><span>发现</span></router-link>
+       <router-link to="/main" tag="li" activeClass="active"><a href="#"><span>首页</span></a></router-link>
+       <router-link to="/tickets" tag="li" activeClass="active"><a href="#"><span>购票</span></a></router-link>
+       <router-link to="/shopping" tag="li" activeClass="active"><a href="#"><span>商城</span><em class="new">NEW</em></a></router-link>
+        <router-link to="/find" tag="li" activeClass="active"><a href="#"><span>发现</span></a></router-link>
         <li><a href="#"><i class="ico_my"></i></a></li>
      </ul>
    </nav>
@@ -22,7 +22,11 @@ export default {
         .active{
             color: #fff;
         };
-        .active :after {
+        a{
+          position:relative;
+          text-decoration: none;
+        }
+        .active a:after {
           content: '';
           display: block;
           height: .2rem;
@@ -62,7 +66,7 @@ export default {
                   line-height: 1.1rem;
                   position: absolute;
                   top: .7rem;
-                  left: 3.6rem;
+                  left: 2.6rem;
             }
             a{
               color: #bbb;
