@@ -6,10 +6,13 @@
         <i class="iconfont icon-moreunfold"></i>
       </div>
       <i class="iconfont icon-search"></i>
-      <input :type="text" @click="handleclick()" value="         影片/影人/影院,任你搜">
+      <router-link to="/inputdetail" tag="input" type="text" value="      影片/影人任你搜">
+      </router-link>
+      
     </div>
     <Nowplaying></Nowplaying>
     <Comingsoon></Comingsoon>
+    <router-view></router-view>
 
   </div>
 </template>
@@ -19,11 +22,11 @@ import Nowplaying from '@/views/Main/nowplaying'
 import Comingsoon from '@/views/Main/comingsoon'
 import "@/assets/iconfont/iconfont.css";
 export default {
-  methods: {
-    handleclick() {
-      this.$router.push("/inputdetail");
-    }
-  },
+  // methods: {
+  //   handleclick() {
+  //     this.$router.push("/inputdetail");
+  //   }
+  // },
   components:{
       Nowplaying,
       Comingsoon

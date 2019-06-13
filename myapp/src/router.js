@@ -5,16 +5,17 @@ import Find from '@/views/Find/Find.vue'
 import Shopping from '@/views/Shopping/Shopping.vue'
 import Tickets from '@/views/Tickets/Tickets.vue'
 import Detail from '@/views/Main/detail/detail.vue'
+import Inputdetail from '@/views/Main/detail/inputdetail.vue'
+
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: '/main',
-      component: Main
+      component: Main,
     },
     {
       path: '/tickets',
@@ -33,11 +34,15 @@ export default new Router({
       component: Main
 
     },
-    {//创建动态路由
+    { //创建动态路由
       path: '/detail/:id',
       name: 'detail',
       component: Detail
     },
+    {
+      path:'/inputdetail',
+      component:Inputdetail
+    }
 
   ]
 })
