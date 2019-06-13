@@ -4,6 +4,7 @@ import Main from '@/views/Main/Main.vue'
 import Find from '@/views/Find/Find.vue'
 import Shopping from '@/views/Shopping/Shopping.vue'
 import Tickets from '@/views/Tickets/Tickets.vue'
+import cinemaDetail from '@/views/Tickets/cinemaDetail.vue'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/',
       component: Main
       
+    },
+    {
+      path: '/cinemaDetail/:id',
+      component: cinemaDetail
+
     }
   ]
 })
