@@ -1,10 +1,15 @@
 <template>
-    <div v-if="scrollImglist">
-        <lunbo>
-            <div class="swiper-slide" v-for="(data,index) in scrollImglist" :key="index">
+    <div >
+        <lunbo :key="scrollImglist.length"> 
+            <div class="swiper-slide" v-for="(data) in scrollImglist" :key="data.url">
             <img :src="data.image" alt="">
           </div>
         </lunbo>
+        <div>
+            <ul>
+                <li v-for="(data,key) in navigatorIcon" :key="key">{{data.iconTitle}}<img :src=data.image></li>
+            </ul>
+        </div>
     </div>
 </template>
 <script>
@@ -13,7 +18,8 @@ import lunbo from '@/components/lunbo'
 export default {
     data(){
         return{
-            scrollImglist:[]
+            scrollImglist:[],
+            navigatorIcon:[]
         }
     },
     mounted(){
@@ -22,6 +28,7 @@ export default {
         }).then(res=>{
             console.log(res.data.scrollImg)
             this.scrollImglist = res.data.scrollImg
+            this.navigatorIcon = res.data.navigatorIcon
         })
     },
      components: {
