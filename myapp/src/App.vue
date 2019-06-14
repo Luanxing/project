@@ -26,6 +26,9 @@ export default {
 
 <style lang="scss">
 *{margin:0;padding:0}
+body{
+    background:rgb(246,246,246);
+}
  ul{
    li{
      list-style: none;

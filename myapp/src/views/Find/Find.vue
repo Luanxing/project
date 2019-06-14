@@ -1,5 +1,5 @@
 <template>
     <div>
-        find
+        {{this.$store.state.MarketFirstPageNewList}}
     </div>
 </template>

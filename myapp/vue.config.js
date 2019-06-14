@@ -1,8 +1,8 @@
 module.exports = {
     devServer: {
       proxy: {
-        '/PageSubArea': {
-          target: 'https://m.mtime.cn/Service/callback.mi',
+        '/Service': {
+          target: 'https://m.mtime.cn',
           changeOrigin: true
         }
       }
