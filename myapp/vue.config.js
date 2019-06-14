@@ -11,7 +11,12 @@ module.exports = {
         },
         '/foo': {
           target: '<other_url>'
-        }
+        },
+        '/api':{
+          target:'https://ticket-m.mtime.cn',
+          // ws:true,
+          changeOrigin:true
+      },
       }
     }
   }

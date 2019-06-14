@@ -47,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
     .zhinan{
-        width: 32.52rem;
+        width: 30.52rem;
         height: 18.7rem;  
     }
     h2{

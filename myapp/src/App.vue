@@ -30,6 +30,7 @@ export default {
 *{margin:0;padding:0}
 body{
     background:rgb(246,246,246);
+    overflow-x:hidden;
 }
  ul{
    li{

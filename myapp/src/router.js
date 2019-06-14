@@ -8,7 +8,7 @@ import Detail from '@/views/Main/detail/detail.vue'
 import Inputdetail from '@/views/Main/detail/inputdetail.vue'
 import Hotdetail from '@/views/Main/detail/hotdetail.vue'
 import Finddetail from '@/views/Main/detail/finddetail.vue'
-
+import cinemaDetail from '@/views/Tickets/cinemaDetail.vue'
 
 Vue.use(Router)
 
@@ -54,7 +54,11 @@ export default new Router({
       path: '/hotdetail/:id',
       name: 'hotdetail',
       component: Hotdetail
-    }
+    },
+    {
+      path: '/cinemaDetail/:id',
+      component: cinemaDetail
 
+    }
   ]
 })
