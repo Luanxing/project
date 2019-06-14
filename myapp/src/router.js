@@ -6,6 +6,8 @@ import Shopping from '@/views/Shopping/Shopping.vue'
 import Tickets from '@/views/Tickets/Tickets.vue'
 import Detail from '@/views/Main/detail/detail.vue'
 import Inputdetail from '@/views/Main/detail/inputdetail.vue'
+import Hotdetail from '@/views/Main/detail/hotdetail.vue'
+import Finddetail from '@/views/Main/detail/finddetail.vue'
 
 
 Vue.use(Router)
@@ -42,6 +44,16 @@ export default new Router({
     {
       path:'/inputdetail',
       component:Inputdetail
+    },
+    {
+      path:'/finddetail',
+      component:Finddetail
+    },
+
+    {
+      path: '/hotdetail/:id',
+      name: 'hotdetail',
+      component: Hotdetail
     }
 
   ]
