@@ -5,21 +5,21 @@
 		<h2 class="t0">{{datalist.title}}</h2>
 	</div>
      <ul class="a1">
-            <li class="t1">
+            <li class="t1" @click="handleleader(sgid)">
                 <i class="top01"></i>
                 <p><span>时光Top100</span></p>
             </li>
-            <li class="t2">
+            <li class="t2" @click="handleleader(hyid)">
                 <i class="top02"></i>
                 <p><span>华语Top100</span></p>
             </li>
-            <li class="t3">
+            <li class="t3" @click="handleleader(qqid)">
                 <i class="top03"></i>
                 <p><span>全球票房榜</span></p>
             </li>
         </ul>
     <ul class="a2">
-        <li v-for="(data,key) in datalist2" :key=key>
+        <li v-for="(data,key) in datalist2" @click="handleChangePage(data.id)" :key=key>
         <div class="m1">
             <h2>{{data.topListNameCn}}</h2>
             <p>{{data.summary}}</p>
@@ -37,7 +37,10 @@ export default {
     data () {
 			return {
 			datalist: {},
-			datalist2: {} 
+            datalist2: {} ,
+            sgid: 2065,
+            hyid: 2066,
+            qqid: 2015
 			}
 		},
 
@@ -52,7 +55,15 @@ export default {
 				console.log(res.data.topLists)
 				this.datalist2 = res.data.topLists
 			})
-		}
+		},
+         methods: {
+            handleChangePage (id) {
+                this.$router.push(`/find_leaderboarddetail/${id}`)
+            },
+            handleleader (id) {
+                this.$router.push(`/find_leaderboarddetailtwo/${id}`)
+            }
+        }
 }
 </script>
 
@@ -183,3 +194,4 @@ export default {
 }
 
 </style>
+

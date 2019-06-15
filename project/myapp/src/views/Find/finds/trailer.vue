@@ -6,7 +6,9 @@
 		<i class="i_video"></i>
 	</div>
 	<ul class="a1">
-		<li v-for="(data,key) in datalist2" :key=key>
+		<li v-for="(data,key) in datalist2" @click="handleChange()" :key=key>
+			<eldialog :playerOptions.src="data.hightUrl" v-show="isShow">
+			</eldialog>	
 			<div class="t1">
 				<i class="i_video"></i>
 				<img :src="data.coverImg" class="ig1"/>
@@ -23,11 +25,13 @@
 
 <script>
 import axios from "axios";
+import eldialog from "./vue-video-player"
 export default {
     data () {
 			return {
 			datalist: {},
-			datalist2: {} 
+			datalist2: {} ,
+			isShow: false
 			}
 		},
 
@@ -42,7 +46,15 @@ export default {
 				console.log(res.data.trailers)
 				this.datalist2 = res.data.trailers
 			})
-		}
+		},
+		methods:{
+			handleChange () {
+				isShow: true
+			}
+		},
+		components: {
+		eldialog
+	}
 }
 </script>
 
