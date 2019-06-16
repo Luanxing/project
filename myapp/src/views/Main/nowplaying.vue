@@ -6,41 +6,39 @@
               <img :src="data.img">
               <p>{{data.t}}</p>
           </li>
-       </ul> 
+       </ul>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
-    data() {
-        return {
-            filmlist:[]
-        }
-    },
-    methods: {
-        handleclick(id){
-            this.$router.push(`/detail/${id}`)
-        }
-    },
-   mounted() {
-        axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=292&t=20196121847219062').then(res=>{
-            // console.log(res.data)
-            this.filmlist=res.data.ms.slice(0, 8)
-        })
-    },
-    
+  data () {
+    return {
+      filmlist: []
+    }
+  },
+  methods: {
+    handleclick (id) {
+      this.$router.push(`/detail/${id}`)
+    }
+  },
+  mounted () {
+    axios.get('/Service/callback.mi/Showtime/LocationMovies.api?locationId=292&t=20196121847219062').then(res => {
+      // console.log(res.data)
+      this.filmlist = res.data.ms.slice(0, 8)
+    })
+  }
+
 }
 </script>
 
 <style lang="scss" scoped>
-ul{ 
+ul{
     width: 32rem;
     height: 30rem;
     display: flex;
     flex-wrap: wrap;
-    
-
 
     li{
         width: 7.9rem;
@@ -50,7 +48,7 @@ ul{
     }
     img{
         width: 7.5rem;
-        height: 11.3rem;    
+        height: 11.3rem;
     }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div v-if="this.$store.state.MarketFirstPageNewList">
-        <lunbo :key="scrollImglist.length"> 
+        <lunbo :key="scrollImglist.length">
             <div class="swiper-slide" v-for="(data) in $store.state.MarketFirstPageNewList.scrollImg" :key="data.url">
             <img :src="data.image" alt="">
           </div>
@@ -15,7 +15,7 @@
                 <img :src="this.$store.state.MarketFirstPageNewList.cellA.img" alt="">
             </div>
             <div class="shop2">
-               
+
                  <img :src="this.$store.state.MarketFirstPageNewList.cellC.list[0].image" alt="">
             </div>
             <div class="shop3">
@@ -35,29 +35,32 @@ import lunbo from '@/components/lunbo'
 import sbswiper from '@/components/sbswiper'
 import malltype from '@/components/malltype'
 export default {
-    data(){
-        return{
-            MarketFirstPageNewList:{},
-            scrollImglist:[],
-            navigatorIcon:[],
+  data () {
+    return {
+      MarketFirstPageNewList: {},
+      scrollImglist: [],
+      navigatorIcon: []
 
-        }
-    },
-    mounted(){
-        axios({
-            url:'/Service/callback.mi/PageSubArea/MarketFirstPageNew.api?t=20196112064759457'
-        }).then(res=>{
-            this.$store.state.MarketFirstPageNewList = res.data
-            console.log(res.data.scrollImg)
-            this.MarketFirstPageNewList = res.data
-            this.scrollImglist = res.data.scrollImg
-            this.navigatorIcon = res.data.navigatorIcon
-        })
-    },
-     components: {
-        lunbo,
-        sbswiper,
-        malltype
+    }
+  },
+  mounted () {
+    axios({
+      url: '/Service/callback.mi/PageSubArea/MarketFirstPageNew.api?t=20196112064759457',
+      headers: {
+        'X-Mtime-Wap-CheckValue': 'mtime'
+      }
+    }).then(res => {
+      this.$store.state.MarketFirstPageNewList = res.data
+      console.log(res.data.scrollImg)
+      this.MarketFirstPageNewList = res.data
+      this.scrollImglist = res.data.scrollImg
+      this.navigatorIcon = res.data.navigatorIcon
+    })
+  },
+  components: {
+    lunbo,
+    sbswiper,
+    malltype
   }
 }
 </script>

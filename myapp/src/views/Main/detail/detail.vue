@@ -41,16 +41,16 @@
 </template>
 
 <script>
-import "@/assets/iconfont/iconfont.css";
-import axios from "axios";
+import '@/assets/iconfont/iconfont.css'
+import axios from 'axios'
 export default {
-  data() {
+  data () {
     return {
       // detaillist:[]
       detaillist: {}
-    };
+    }
   },
-  mounted() {
+  mounted () {
     axios
       .get(
         `/Service/callback.mi/movie/Detail.api?movieId=${
@@ -58,12 +58,12 @@ export default {
         }&locationId=290&t=20196138591130644`
       )
       .then(res => {
-        console.log(res.data);
+        console.log(res.data)
         // this.detaillist=res.data.images
-        this.detaillist = res.data;
-      });
+        this.detaillist = res.data
+      })
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

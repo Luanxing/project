@@ -20,9 +20,9 @@
         </ul>
         </div>
     </div>
-    
+
   </div>
-  
+
     </div>
 </template>
 
@@ -30,28 +30,28 @@
 import Swiper from 'swiper' // js模块
 import 'swiper/dist/css/swiper.css' // css模块
 export default {
-    mounted(){
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
-          
+  mounted () {
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+
       spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
       watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    });
+      watchSlidesProgress: true
+    })
     var galleryTop = new Swiper('.gallery-top', {
-      effect : 'cube',
+      effect: 'cube',
       spaceBetween: 10,
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        prevEl: '.swiper-button-prev'
       },
       thumbs: {
         swiper: galleryThumbs
-      },
-      
-    });
-    }
+      }
+
+    })
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -75,7 +75,7 @@ export default {
       margin-left: auto;
       margin-right: auto;
     }
-   
+
     .gallery-top {
       width: 100%;
       img{
@@ -96,9 +96,9 @@ export default {
     .gallery-thumbs .swiper-slide {
       width: 25%;
       height: 100%;
-      
+
     }
-   
+
     .gallery-thumbs .swiper-slide-thumb-active {
       .mark{
         display:none;
@@ -113,7 +113,6 @@ export default {
      height: 96px;
      width:96px;
     border-radius: 50%;
-    
 
    }
    .content{

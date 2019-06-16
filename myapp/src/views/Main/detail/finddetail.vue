@@ -20,24 +20,24 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  data() {
+  data () {
     return {
       datalist: []
-    };
+    }
   },
-  mounted() {
+  mounted () {
     axios
       .get(
-        "/Service/callback.mi/Movie/MovieComingNew.api?locationId=292&t=201961320204596653"
+        '/Service/callback.mi/Movie/MovieComingNew.api?locationId=292&t=201961320204596653'
       )
       .then(res => {
-        console.log(res.data.moviecomings);
-        this.datalist = res.data;
-      });
+        console.log(res.data.moviecomings)
+        this.datalist = res.data
+      })
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -79,7 +79,7 @@ ul {
       border-radius:40%;
       text-align: center;
       color: #000;
-     
+
     }
   }
   img {

@@ -9,7 +9,7 @@
 <script>
 import navbar from '@/components/navbar'
 import navfooter from '@/components/footer'
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 // Vue.component("Tarbar",Tarbar)
 export default {
   mounted () {
@@ -19,10 +19,10 @@ export default {
     navbar,
     navfooter
   },
-  //非父子通信访问状态
+  // 非父子通信访问状态
   computed: {
     ...mapState(['isNavbarshow'])
-  },
+  }
 }
 </script>
 

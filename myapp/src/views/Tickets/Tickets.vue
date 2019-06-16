@@ -19,7 +19,7 @@
         <div class="line" style="line-height: 1.8rem; background: rgb(246, 246, 246); font-size: 0.8rem; color: rgb(153, 153, 153); text-align: center;">以下影院均非时光网自营</div>
         <ul>
             <router-link to="/cinemaDetail" tag="li" class="list" v-for="(data,key) in datalist " :key=key>
-      
+
                 <dl>
                     <dt>
                         <p class="name">{{data.cinameName}}</p>
@@ -38,29 +38,28 @@
                         <p v-show="data.feature.hasFeature4D=== 1" class="feature">4D</p>
                         <p v-show="data.feature.hasFeatureDolby === 1" class="feature">杜比</p>
                     </dd>
-                </dl> 
+                </dl>
              </router-link>
         </ul>
     </div>
-     
+
 </template>
 
 <script>
 import axios from 'axios'
-import Vue from 'vue'
 
 export default {
-    data () {
-        return{
-            datalist: {},
-        }
-    },
-    mounted(){
-        axios.get('/api/proxy/ticket/onlineCinemasByCity.api?locationId=729&_=1560340914901').then(res=>{
-            console.log(res.data.data.cinemaList)
-            this.datalist = res.data.data.cinemaList
-        })
-    },
+  data () {
+    return {
+      datalist: {}
+    }
+  },
+  mounted () {
+    axios.get('/api/proxy/ticket/onlineCinemasByCity.api?locationId=729&_=1560340914901').then(res => {
+      console.log(res.data.data.cinemaList)
+      this.datalist = res.data.data.cinemaList
+    })
+  }
 
 }
 
@@ -103,7 +102,7 @@ export default {
     padding-top: 1rem;
     padding-bottom: 1rem;
     padding-left: .5rem;
-    
+
     }
     .minibox{
     float: right;
@@ -119,10 +118,10 @@ export default {
     font-style: normal;
     font-weight: 400;
     color: #ff8600;
-    
+
     }
     .yuan{
-      
+
         font-size: 1.2rem;
         color: #ff8600;
     }
@@ -226,7 +225,6 @@ export default {
         text-align: center;
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
-    
+
     }
 </style>
-

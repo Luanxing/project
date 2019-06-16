@@ -32,31 +32,34 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from 'axios'
 export default {
-  data() {
+  data () {
     return {
       datalist: [],
-      pricelist:[]
-    };
+      pricelist: []
+    }
   },
-  mounted() {
-    this.datalist = this.$store.state.MarketFirstPageNewList.category;
+  mounted () {
+    this.datalist = this.$store.state.MarketFirstPageNewList.category
     axios({
-        url:'/Service/callback.mi/ECommerce/GoodsPrices.api?t=20196132001574245&goodsIds=107091%2C107094%2C105242%2C107095%2C101829%2C104706%2C107061%2C107063%2C107179%2C107113%2C107145%2C107157%2C102831%2C102833%2C102841%2C102533%2C102732%2C102531%2C105695%2C105730%2C105724%2C105727%2C105728%2C105729%2C106277%2C106476%2C106469%2C106560%2C106475%2C106577%2C104366%2C101125%2C102841%2C108115%2C107167%2C107047%2C108084%2C107732%2C107060%2C108110%2C107741%2C107740'
+      url: '/Service/callback.mi/ECommerce/GoodsPrices.api?t=20196132001574245&goodsIds=107091%2C107094%2C105242%2C107095%2C101829%2C104706%2C107061%2C107063%2C107179%2C107113%2C107145%2C107157%2C102831%2C102833%2C102841%2C102533%2C102732%2C102531%2C105695%2C105730%2C105724%2C105727%2C105728%2C105729%2C106277%2C106476%2C106469%2C106560%2C106475%2C106577%2C104366%2C101125%2C102841%2C108115%2C107167%2C107047%2C108084%2C107732%2C107060%2C108110%2C107741%2C107740',
+      headers: {
+        'X-Mtime-Wap-CheckValue': 'mtime'
+      }
     }).then(
-        res=>{
-           this.pricelist = res.data.result
-           console.log(this.pricelist)
-        }
+      res => {
+        this.pricelist = res.data.result
+        console.log(this.pricelist)
+      }
     )
   },
   filters: {
-    filterAdd1(id,arr) {
-       
+    filterAdd1 (id, arr) {
+
     }
   }
-};
+}
 </script>
 <style lang="scss" scope>
 .malltype {
@@ -136,9 +139,7 @@ export default {
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             margin: 0 0.5rem;
-            
-           
-          
+
           }
             p{
                     font-size: 1.2rem;

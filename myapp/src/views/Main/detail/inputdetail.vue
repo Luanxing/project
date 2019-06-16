@@ -16,34 +16,34 @@
 </template>
 
 <script>
-import "@/assets/iconfont/iconfont.css";
-import { HIDE_NAVBAR_MUTATION, SHOW_NAVBAR_MUTATION } from "@/type/index.js";
-import axios from "axios";
-import {mapState} from 'vuex'
+import '@/assets/iconfont/iconfont.css'
+import { HIDE_NAVBAR_MUTATION, SHOW_NAVBAR_MUTATION } from '@/type/index.js'
+import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
-      mytext: "",
-      searchinglist: [],
-    //   historylist:[]
+      mytext: '',
+      searchinglist: []
+      //   historylist:[]
 
-    };
+    }
   },
 
-  mounted() {
-    this.$store.commit(HIDE_NAVBAR_MUTATION, false);
+  mounted () {
+    this.$store.commit(HIDE_NAVBAR_MUTATION, false)
 
-    if(this.hotlist.length===0){
-        this.$store.dispatch('getHotlistaction')
-    }else{
-        console.log('使用缓存数据')
+    if (this.hotlist.length === 0) {
+      this.$store.dispatch('getHotlistaction')
+    } else {
+      console.log('使用缓存数据')
     }
   },
   computed: {
-    ...mapState(["hotlist"]),
+    ...mapState(['hotlist'])
   },
   methods: {
-    handleinput() {
+    handleinput () {
       axios
         .get(
           `/Service/callback.mi/Search/SearchSuggestionNew.api?t=201961315435967897&keyword=${
@@ -52,19 +52,17 @@ export default {
         )
         .then(res => {
           // console.log(res.data.suggestions)
-          this.searchinglist = res.data.suggestions;
-          console.log(res.data);
-        });
-    },
+          this.searchinglist = res.data.suggestions
+          console.log(res.data)
+        })
+    }
 
-
-    
   },
 
-  destroyed() {
-    this.$store.commit(SHOW_NAVBAR_MUTATION, true);
+  destroyed () {
+    this.$store.commit(SHOW_NAVBAR_MUTATION, true)
   }
-};
+}
 </script>
 
 <style lang='scss' scoped >
@@ -122,4 +120,3 @@ li {
     }
 }
 </style>
-
