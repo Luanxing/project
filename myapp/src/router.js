@@ -82,9 +82,8 @@ export default new Router({
     component: Hotdetail
   },
   {
-    path: '/cinemaDetail/:id',
+    path: '/cinemaDetail/:zsid',
     component: cinemaDetail
-
-  }
+}
   ]
 })
