@@ -1,5 +1,5 @@
 <template>
-    <div v-if="this.$store.state.MarketFirstPageNewList">
+    <div >
         <lunbo :key="scrollImglist.length">
             <div class="swiper-slide" v-for="(data) in $store.state.MarketFirstPageNewList.scrollImg" :key="data.url">
             <img :src="data.image" alt="">

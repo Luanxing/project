@@ -9,7 +9,7 @@
       </div>
     </swiper>
     </div>
-    <div class="showtime"> 
+    <div class="showtime">
       <h2 class="lineblock">{{'今天'}}</h2>
       <ul v-for="(data,key) in datalist2" :key="key">
         <li  class="dis" v-for="(data,key) in data.list" :key="key" >
@@ -23,19 +23,19 @@
   </div>
 </template>
 <script>
-import axios from "axios";
-import Vue from "vue";
+import axios from 'axios'
+import Vue from 'vue'
 import swiper from './cinemaDetail/swiper'
 import '@/filter/filter.js'
 
 export default {
-  data() {
+  data () {
     return {
       datalist: null,
-      datalist2:null
-    };
+      datalist2: null
+    }
   },
-  mounted() {
+  mounted () {
     axios
       .get(
         `/cinema/showtime.api?t=201961319165843289&cinemaId=${
@@ -43,18 +43,18 @@ export default {
         }`
       )
       .then(res => {
-        console.log(res.data.data);
-        this.datalist = res.data.data.movies;
-        this.datalist2 = res.data.data.showtimes;
-      });
+        console.log(res.data.data)
+        this.datalist = res.data.data.movies
+        this.datalist2 = res.data.data.showtimes
+      })
   },
-  components:{
-     swiper
+  components: {
+    swiper
   },
-  methods:{
+  methods: {
 
   }
-};
+}
 </script>
 <style lang="scss" scoped>
 .main {
@@ -82,8 +82,7 @@ export default {
   padding-top: .8rem;
   font-size: 2.2rem;
   color:blue;
-  
- 
+
 }
 .dis{
   .hall{

@@ -10,21 +10,18 @@
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
 
-
 export default {
 
-    mounted(){
+  mounted () {
     new Swiper('.zs', {
       slidesPerView: 2.5,
       spaceBetween: 100,
 	  centeredSlides: true
     })
-    }   
+  }
 }
 </script>
 
 <style lang="scss">
 
 </style>
-
-

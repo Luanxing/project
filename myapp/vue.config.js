@@ -13,10 +13,10 @@ module.exports = {
         // ws:true,
         changeOrigin: true
       },
-      '/cinema':{
-        target:'https://ticket-api-m.mtime.cn',
-        changeOrigin:true
-    }
+      '/cinema': {
+        target: 'https://ticket-api-m.mtime.cn',
+        changeOrigin: true
+      }
     }
   }
 }

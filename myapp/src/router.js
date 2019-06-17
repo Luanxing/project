@@ -13,6 +13,10 @@ import Filmreview from '@/views/Find/finds/filmreview'
 import Leaderboard from '@/views/Find/finds/leaderboard'
 import News from '@/views/Find/finds/news'
 import Trailer from '@/views/Find/finds/trailer'
+import FindnewsDetail from '@/views/Find/find_newsdetail'
+import FindreviewDetail from '@/views/Find/find_reviewdetail'
+import FindleaderboarDetail from '@/views/Find/find_leaderboarddetail'
+import FindleaderboarDetailtwo from '@/views/Find/find_leaderboarddetailtwo'
 Vue.use(Router)
 
 export default new Router({
@@ -68,6 +72,22 @@ export default new Router({
     component: Detail
   },
   {
+    path: '/find_newsdetail/:dfqid',
+    component: FindnewsDetail
+  },
+  {
+    path: '/find_reviewdetail/:dfqid',
+    component: FindreviewDetail
+  },
+  {
+    path: '/find_leaderboarddetail/:dfqid',
+    component: FindleaderboarDetail
+  },
+  {
+    path: '/find_leaderboarddetailtwo/:dfqid',
+    component: FindleaderboarDetailtwo
+  },
+  {
     path: '/inputdetail',
     component: Inputdetail
   },
@@ -84,6 +104,6 @@ export default new Router({
   {
     path: '/cinemaDetail/:zsid',
     component: cinemaDetail
-}
+  }
   ]
 })

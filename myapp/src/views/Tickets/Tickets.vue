@@ -26,7 +26,7 @@
                         <li>IMAX</li>
                         <li>情侣</li>
                         <li>巨幕</li>
-                        <li>VIP</li>  
+                        <li>VIP</li>
                     </ul>
                 </div> -->
             </ul>
@@ -34,7 +34,7 @@
         <div class="line" style="line-height: 1.8rem; background: rgb(246, 246, 246); font-size: 0.8rem; color: rgb(153, 153, 153); text-align: center;">以下影院均非时光网自营</div>
         <ul>
             <li @click="handleClick(data.cinemaId)" to="/cinemaDetail" tag="li" class="list" v-for="(data,key) in datalist " :key=key>
-      
+
                 <dl>
                     <dt>
                         <p class="name">{{data.cinameName}}</p>
@@ -53,7 +53,7 @@
                         <p v-show="data.feature.hasFeature4D=== 1" class="feature">4D</p>
                         <p v-show="data.feature.hasFeatureDolby === 1" class="feature">杜比</p>
                     </dd>
-                </dl> 
+                </dl>
              </li>
         </ul>
     </div>
@@ -63,29 +63,28 @@
 <script>
 import axios from 'axios'
 
-
 export default {
-    data () {
-        return{
-            datalist: {},
-            show:false
-        }
-    },
-    mounted(){
-        axios.get('/api/proxy/ticket/onlineCinemasByCity.api?locationId=729&_=1560340914901').then(res=>{
-            console.log(res.data.data.cinemaList)
-            this.datalist = res.data.data.cinemaList
-        })
-    },
-    methods:{
-        handleClick(id){
-            this.$router.push(`/cinemaDetail/${id}`)
-        },
-        changeStatus(){
-			      this.show =!this.show ;  
-           }
-        
+  data () {
+    return {
+      datalist: {},
+      show: false
     }
+  },
+  mounted () {
+    axios.get('/api/proxy/ticket/onlineCinemasByCity.api?locationId=729&_=1560340914901').then(res => {
+      console.log(res.data.data.cinemaList)
+      this.datalist = res.data.data.cinemaList
+    })
+  },
+  methods: {
+    handleClick (id) {
+      this.$router.push(`/cinemaDetail/${id}`)
+    },
+    changeStatus () {
+			      this.show = !this.show
+    }
+
+  }
 
 }
 

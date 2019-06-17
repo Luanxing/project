@@ -9,7 +9,7 @@
 	</div>
     <div class="a1">
         <ul>
-            <li v-for="(data,key) in datalist2" :key=key>
+            <li v-for="(data,key) in datalist2" @click="handleChangePage(data.id)" :key=key>
                 <dl>
                   <dt>{{data.title}}</dt>
                 </dl>
@@ -49,6 +49,11 @@ export default {
         console.log(res.data)
         this.datalist2 = res.data
       })
+  },
+  methods: {
+    handleChangePage (id) {
+      this.$router.push(`/find_reviewdetail/${id}`)
+    }
   }
 }
 </script>

@@ -5,7 +5,7 @@
 			<p class="t0">{{datalist.title}}</p>
 			</div>
 		<ul>
-			<li v-for="(data,key) in datalist2" :key=key>
+			<li v-for="(data,key) in datalist2" @click="handleChangePage(data.id)" :key=key >
 				<div v-if="data.images.length===3" class="t2">
 				<dl>
 				<dt>{{data.title}}</dt>
@@ -57,6 +57,11 @@ export default {
         console.log(res.data.newsList)
         this.datalist2 = res.data.newsList
       })
+  },
+		 methods: {
+    handleChangePage (id) {
+      this.$router.push(`/find_newsdetail/${id}`)
+    }
   }
 }
 </script>
