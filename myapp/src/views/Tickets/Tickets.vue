@@ -10,15 +10,30 @@
         </div>
         <div class="">
             <ul class="menu">
-                <li class="first">离我最近</li>
-                <li class="second">全城</li>
-                <li class="click" >影厅特效</li>
-
+                <li class="first" @click="changeStatus()">离我最近</li>
+                <div class="hidebox" v-if="show">
+                    <ul>
+                        <li>离我最近</li>
+                        <li>价格最低</li>
+                    </ul>
+                </div>
+                <li class="second1">全城</li>
+                <li  class="second" @click="changeStatus()" >影厅特效</li>
+                <!-- <div class="hidebox2" v-if="show">
+                    <ul>
+                        <li>3D</li>
+                        <li>4D</li>
+                        <li>IMAX</li>
+                        <li>情侣</li>
+                        <li>巨幕</li>
+                        <li>VIP</li>  
+                    </ul>
+                </div> -->
             </ul>
         </div>
         <div class="line" style="line-height: 1.8rem; background: rgb(246, 246, 246); font-size: 0.8rem; color: rgb(153, 153, 153); text-align: center;">以下影院均非时光网自营</div>
         <ul>
-            <router-link to="/cinemaDetail" tag="li" class="list" v-for="(data,key) in datalist " :key=key>
+            <li @click="handleClick(data.cinemaId)" to="/cinemaDetail" tag="li" class="list" v-for="(data,key) in datalist " :key=key>
       
                 <dl>
                     <dt>
@@ -39,7 +54,7 @@
                         <p v-show="data.feature.hasFeatureDolby === 1" class="feature">杜比</p>
                     </dd>
                 </dl> 
-             </router-link>
+             </li>
         </ul>
     </div>
      
@@ -49,10 +64,12 @@
 import axios from 'axios'
 import Vue from 'vue'
 
+
 export default {
     data () {
         return{
             datalist: {},
+            show:false
         }
     },
     mounted(){
@@ -61,6 +78,15 @@ export default {
             this.datalist = res.data.data.cinemaList
         })
     },
+    methods:{
+        handleClick(id){
+            this.$router.push(`/cinemaDetail/${id}`)
+        },
+        changeStatus(){
+			      this.show =!this.show ;  
+           }
+        
+    }
 
 }
 
@@ -214,9 +240,25 @@ export default {
         .first{
             border-right:2px solid #bbb;
         }
-        .second{
+        .second1{
             border-right:2px solid #bbb;
         }
+        .hidebox{
+            width: 100%;
+            height:8rem;
+            background: rgb(236, 231, 231);
+            z-index: 2;
+            position: absolute;
+            top:12.8rem;
+        }
+        // .hidebox2{
+        //     width: 100%;
+        //     height:8rem;
+        //     background: rgb(236, 231, 231);
+        //     z-index: 2;
+        //     position: absolute;
+        //     top:12.8rem;
+        // }
     }
     .line{
         line-height: 1.8rem;

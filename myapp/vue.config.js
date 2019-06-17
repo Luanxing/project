@@ -6,10 +6,12 @@ module.exports = {
                 // ws:true,
                 changeOrigin:true
             },
-            '/foo':{
-                target:'<other_url>'
+            '/cinema':{
+                target:'https://ticket-api-m.mtime.cn',
+                changeOrigin:true
             }
         }
     },
-
+lintOnSave:false
 }
+

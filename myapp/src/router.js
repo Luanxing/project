@@ -30,11 +30,10 @@ export default new Router({
     },
     {
       path: '/',
-      component: Main
-      
+      component: Main  
     },
     {
-      path: '/cinemaDetail/:id',
+      path: '/cinemaDetail/:zsid',
       component: cinemaDetail
 
     }
